@@ -128,7 +128,7 @@ export function onWS(event, handler) {
   
   listeners[event].add(handler);
   
-  // اگر الان connected هست، فوراً handler رو صدا بزن
+  // If already connected, call the handler immediately
   if (event === "open" && socket && socket.readyState === WebSocket.OPEN) {
     try {
       handler(null);

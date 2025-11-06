@@ -5,10 +5,10 @@ import json
 import os
 from dotenv import load_dotenv
 
-# بارگذاری متغیرهای محیطی از فایل .env
+# Load environment variables from .env file
 load_dotenv()
 
-# خواندن تنظیمات از متغیرهای محیطی
+# Read settings from environment variables
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", 8001))
 CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
@@ -37,7 +37,7 @@ async def websocket_endpoint(websocket: WebSocket):
             except json.JSONDecodeError:
                 msg = {"type": "text", "data": data}
 
-            # اگر ping رسید → pong برگردون
+            # If ping received → return pong
             if msg.get("type") == "ping":
                 await websocket.send_text(json.dumps({"type": "pong", "ts": msg.get("ts")}))
             else:

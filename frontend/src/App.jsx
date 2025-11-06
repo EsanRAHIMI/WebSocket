@@ -10,7 +10,7 @@ function App() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // ثبت لیسنرها
+    // Register listeners
     const unsubOpen = onWS('open', () => {
       console.log('App: WebSocket opened');
       setConnected(true);
@@ -27,7 +27,7 @@ function App() {
       setMessages(prev => [...prev, { type: 'text', data: '❌ disconnected', sender: 'server' }]);
     });
 
-    // اتصال
+    // Connect
     connectWS();
 
     // cleanup
@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // اسکرول خودکار به آخرین پیام
+    // Auto-scroll to the latest message
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 

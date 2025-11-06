@@ -7,105 +7,105 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**Professional and Educational Template for Real-Time Communication between React and FastAPI**
+**قالب حرفه‌ای و آموزشی برای پیاده‌سازی ارتباط Real-Time بین React و FastAPI**
 
-[View Demo](#-installation--setup) • [Documentation](#-technical-documentation) • [Contributing](#-contributing) • [Support](#-support)
+[مشاهده دمو](#-نصب-و-راه‌اندازی) • [مستندات](#-مستندات-فنی) • [مشارکت](#-مشارکت-در-پروژه) • [پشتیبانی](#-پشتیبانی)
 
 </div>
 
 ---
 
-## 📚 Table of Contents
+## 📚 فهرست مطالب
 
-- [About WebSocket](#-about-websocket)
-- [Project Features](#-project-features)
-- [System Architecture](#-system-architecture)
-- [Installation & Setup](#-installation--setup)
-- [Project Structure](#-project-structure)
-- [Technical Documentation](#-technical-documentation)
-- [Code Examples](#-code-examples)
-- [Troubleshooting](#-troubleshooting)
+- [درباره WebSocket](#-درباره-websocket)
+- [ویژگی‌های پروژه](#-ویژگیهای-پروژه)
+- [معماری سیستم](#-معماری-سیستم)
+- [نصب و راه‌اندازی](#-نصب-و-راهاندازی)
+- [ساختار پروژه](#-ساختار-پروژه)
+- [مستندات فنی](#-مستندات-فنی)
+- [نمونه کدها](#-نمونه-کدها)
+- [عیب‌یابی](#-عیبیابی)
 - [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [مشارکت در پروژه](#-مشارکت-در-پروژه)
+- [لایسنس](#-لایسنس)
 
 ---
 
-## 🌐 About WebSocket
+## 🌐 درباره WebSocket
 
-### What is WebSocket?
+### WebSocket چیست؟
 
-**WebSocket** is a bidirectional communication protocol that enables **Real-Time** communication between client (browser) and server.
+**WebSocket** یک پروتکل ارتباطی دوطرفه (bidirectional) است که امکان برقراری ارتباط **Real-Time** بین کلاینت (مرورگر) و سرور را فراهم می‌کند.
 
-#### Difference from Regular HTTP:
+#### تفاوت با HTTP معمولی:
 
-| Feature | HTTP | WebSocket |
-|---------|------|-----------|
-| **Communication Type** | One-way (Request-Response) | Two-way (Full-Duplex) |
-| **Connection** | Opens and closes each time | Opens once and stays active |
-| **Latency** | High (handshake each time) | Low (no overhead) |
-| **Resource Usage** | High | Low |
-| **Use Case** | Static pages, APIs | Chat, notifications, online games |
+| ویژگی | HTTP | WebSocket |
+|-------|------|-----------|
+| **نوع ارتباط** | یک‌طرفه (Request-Response) | دوطرفه (Full-Duplex) |
+| **اتصال** | هر بار باز و بسته می‌شود | یک‌بار باز و همیشه فعال |
+| **تأخیر** | بالا (هر بار handshake) | پایین (بدون overhead) |
+| **مصرف منابع** | بالا | کم |
+| **کاربرد** | صفحات استاتیک، API | چت، نوتیفیکیشن، بازی‌های آنلاین |
 
-### Why WebSocket?
+### چرا WebSocket؟
 
 ```
-❌ HTTP Polling (Old Method):
+❌ HTTP Polling (روش قدیمی):
 Client → Request → Server
-Client → Request → Server  (Every 2 seconds!)
+Client → Request → Server  (هر 2 ثانیه!)
 Client → Request → Server
-└─> Resource waste and high latency
+└─> هدر رفت منابع و تأخیر بالا
 
-✅ WebSocket (Modern Method):
-Client ⟷ Server (Persistent connection)
+✅ WebSocket (روش مدرن):
+Client ⟷ Server (اتصال دائمی)
   ↑        ↓
-  Data at any moment without overhead
+  دیتا در هر لحظه بدون overhead
 ```
 
-### Use Cases:
+### موارد استفاده:
 
-- 💬 Chat and messaging applications
-- 🔔 Real-Time notification systems
-- 📊 Live dashboards
-- 🎮 Multiplayer online games
-- 📈 Financial charts and stock markets
-- 🤝 Collaborative tools (like Google Docs)
-- 🚗 GPS tracking systems
+- 💬 چت و پیام‌رسان‌ها
+- 🔔 سیستم نوتیفیکیشن Real-Time
+- 📊 داشبوردهای زنده (Live Dashboard)
+- 🎮 بازی‌های آنلاین چند نفره
+- 📈 نمودارهای مالی و بورس
+- 🤝 ابزارهای Collaborative (مثل Google Docs)
+- 🚗 ردیابی موقعیت مکانی (GPS Tracking)
 
 ---
 
-## ✨ Project Features
+## ✨ ویژگی‌های پروژه
 
-This project is a **ready-to-use professional template** for getting started with WebSocket that includes:
+این پروژه یک **قالب آماده و حرفه‌ای** برای شروع کار با WebSocket است که شامل:
 
-### 🎯 Key Features:
+### 🎯 ویژگی‌های کلیدی:
 
-- ✅ **Smart Auto-Reconnect** with Exponential Backoff algorithm
-- ✅ **Heartbeat/Ping-Pong** for connection detection
-- ✅ **State Management** with React Hooks
-- ✅ **Complete Error Handling** and comprehensive logging
-- ✅ **Type-Safe** and extensible
-- ✅ **Production-Ready** with environment configurations
-- ✅ **Configured CORS**
-- ✅ **Clean Code** and complete documentation
+- ✅ **Auto-Reconnect هوشمند** با الگوریتم Exponential Backoff
+- ✅ **Heartbeat/Ping-Pong** برای تشخیص قطعی اتصال
+- ✅ **State Management** با React Hooks
+- ✅ **Error Handling** کامل و logging جامع
+- ✅ **Type-Safe** و قابل توسعه
+- ✅ **Production-Ready** با تنظیمات محیطی
+- ✅ **CORS** به صورت پیکربندی‌شده
+- ✅ **Clean Code** و مستندسازی کامل
 
-### 🛠️ Technologies Used:
+### 🛠️ تکنولوژی‌های استفاده شده:
 
 **Frontend:**
-- React 18+ (with Hooks)
-- Vite (Fast build)
+- React 18+ (با Hooks)
+- Vite (بیلد سریع)
 - WebSocket API (Native)
 
 **Backend:**
 - FastAPI (Python 3.8+)
 - uvicorn (ASGI Server)
-- python-dotenv (Environment management)
+- python-dotenv (مدیریت محیط)
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ معماری سیستم
 
-### Communication Diagram:
+### نمودار ارتباط:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -151,22 +151,22 @@ This project is a **ready-to-use professional template** for getting started wit
 └───────────────────────────────────────────────────────────────┘
 ```
 
-### Connection Flow:
+### جریان اتصال (Connection Flow):
 
 ```
 1️⃣ Initial Connection:
    Browser → ws://localhost:8001/ws
    Server  → Accept + Send Welcome Message
 
-2️⃣ Heartbeat (Every 5 seconds):
+2️⃣ Heartbeat (هر 5 ثانیه):
    Client → {"type": "ping", "ts": 1234567890}
    Server → {"type": "pong", "ts": 1234567890}
    
-   If Pong not received → Close + Auto-Reconnect
+   اگر Pong نرسد → Close + Auto-Reconnect
 
 3️⃣ User Message:
-   Client → {"type": "text", "data": "Hello"}
-   Server → {"type": "text", "data": "Hello"} (Echo)
+   Client → {"type": "text", "data": "سلام"}
+   Server → {"type": "text", "data": "سلام"} (Echo)
 
 4️⃣ Disconnection:
    Close Event → Stop Heartbeat
@@ -179,78 +179,78 @@ This project is a **ready-to-use professional template** for getting started wit
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 نصب و راه‌اندازی
 
-### Prerequisites:
+### پیش‌نیازها:
 
 - **Node.js** 18+ 
 - **Python** 3.8+
-- **npm** or **yarn**
+- **npm** یا **yarn**
 
-### Step 1️⃣: Clone the Project
+### مرحله 1️⃣: کلون کردن پروژه
 
 ```bash
 git clone https://github.com/EsanRahimi/websocket.git
-cd websocket
+cd websocket-template
 ```
 
-### Step 2️⃣: Setup Backend (FastAPI)
+### مرحله 2️⃣: راه‌اندازی Backend (FastAPI)
 
 ```bash
-# Navigate to backend folder
+# ورود به پوشه backend
 cd backend
 
-# Create virtual environment
+# ایجاد محیط مجازی
 python -m venv venv
 
-# Activate virtual environment
+# فعال‌سازی محیط مجازی
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
 
-# Install packages
+# نصب پکیج‌ها
 pip install -r requirements.txt
 
-# Create .env file
+# ساخت فایل .env
 echo "HOST=0.0.0.0
 PORT=8001
 CORS_ORIGINS=http://localhost:5173
 ENVIRONMENT=development" > .env
 
-# Run server
+# اجرای سرور
 python main.py
 ```
 
-Server will run on `http://localhost:8001`.
+سرور روی `http://localhost:8001` اجرا می‌شود.
 
-### Step 3️⃣: Setup Frontend (React)
+### مرحله 3️⃣: راه‌اندازی Frontend (React)
 
 ```bash
-# Navigate to frontend folder (in new terminal)
+# ورود به پوشه frontend (در ترمینال جدید)
 cd frontend
 
-# Install packages
+# نصب پکیج‌ها
 npm install
-# or
+# یا
 yarn install
 
-# Create .env file (optional)
+# ساخت فایل .env (اختیاری)
 echo "VITE_WS_URL=ws://localhost:8001/ws" > .env
 
-# Run Dev Server
+# اجرای Dev Server
 npm run dev
-# or
+# یا
 yarn dev
 ```
 
-Frontend will run on `http://localhost:5173`.
+فرانت روی `http://localhost:5173` اجرا می‌شود.
 
-### Step 4️⃣: Test Connection
+### مرحله 4️⃣: تست اتصال
 
-1. Open browser: `http://localhost:5173`
-2. Press `F12` and open **Console** tab
-3. You should see these messages:
+1. مرورگر را باز کنید: `http://localhost:5173`
+2. `F12` را بزنید و تب **Console** را باز کنید
+3. باید پیام‌های زیر را ببینید:
 
 ```
 🔌 WS_URL = ws://localhost:8001/ws
@@ -260,15 +260,15 @@ Frontend will run on `http://localhost:5173`.
 App: WebSocket opened
 ```
 
-4. UI status should show **✅ Connected**
-5. Type a message and send - you should get an echo back!
+4. در UI وضعیت باید **✅ Connected** باشد
+5. یک پیام بنویسید و ارسال کنید - باید echo برگردد!
 
 ---
 
-## 📁 Project Structure
+## 📁 ساختار پروژه
 
 ```
-websocket/
+websocket-template/
 ├── backend/
 │   ├── main.py              # FastAPI WebSocket Server
 │   ├── requirements.txt     # Python Dependencies
@@ -285,33 +285,33 @@ websocket/
 │   ├── vite.config.js      # Vite Configuration
 │   └── .env                # Frontend Environment Variables
 │
-├── README.md               # This file!
+├── README.md               # این فایل!
 └── LICENSE                 # MIT License
 ```
 
 ---
 
-## 📖 Technical Documentation
+## 📖 مستندات فنی
 
 ### Frontend API (`ws.js`)
 
 #### `connectWS()`
-Establishes WebSocket connection.
+اتصال به WebSocket را برقرار می‌کند.
 
 ```javascript
 import { connectWS } from './ws';
 
-connectWS(); // Connect
+connectWS(); // اتصال
 ```
 
 #### `onWS(event, handler)`
-Registers listener for events and returns unsubscribe function.
+لیسنر برای رویدادها ثبت می‌کند و تابع unsubscribe برمی‌گرداند.
 
-**Events:**
-- `open`: When connection is established
-- `message`: When message is received
-- `close`: When connection is closed
-- `error`: When error occurs
+**رویدادها:**
+- `open`: وقتی اتصال برقرار شد
+- `message`: وقتی پیام رسید
+- `close`: وقتی اتصال قطع شد
+- `error`: وقتی خطا رخ داد
 
 ```javascript
 import { onWS } from './ws';
@@ -320,12 +320,12 @@ const unsubscribe = onWS('message', (msg) => {
   console.log('Received:', msg);
 });
 
-// To unsubscribe:
+// برای لغو:
 unsubscribe();
 ```
 
 #### `sendWS(data)`
-Sends message (if connected).
+پیام ارسال می‌کند (اگر متصل باشد).
 
 ```javascript
 import { sendWS } from './ws';
@@ -334,7 +334,7 @@ sendWS({ type: 'text', data: 'Hello!' });
 ```
 
 #### `shutdownWS()`
-Closes connection and stops heartbeat.
+اتصال را قطع می‌کند و heartbeat را متوقف می‌کند.
 
 ```javascript
 import { shutdownWS } from './ws';
@@ -348,49 +348,49 @@ shutdownWS();
 
 #### WebSocket Endpoint: `/ws`
 
-**Messages sent from server:**
+**پیام‌های ارسالی از سرور:**
 
 ```json
-// Welcome message
+// پیام خوش‌آمدگویی
 {
   "type": "text",
   "data": "👋 connected"
 }
 
-// Response to ping
+// پاسخ به ping
 {
   "type": "pong",
   "ts": 1234567890
 }
 
-// Echo user message
+// Echo پیام کاربر
 {
   "type": "text",
   "data": "..."
 }
 ```
 
-**Messages received:**
+**پیام‌های دریافتی:**
 
 ```json
-// Ping for heartbeat
+// Ping برای heartbeat
 {
   "type": "ping",
   "ts": 1234567890
 }
 
-// User message
+// پیام کاربر
 {
   "type": "text",
-  "data": "Hello"
+  "data": "سلام"
 }
 ```
 
 ---
 
-## 💡 Code Examples
+## 💡 نمونه کدها
 
-### Send Custom Type Message:
+### ارسال پیام با نوع سفارشی:
 
 ```javascript
 // Frontend
@@ -415,14 +415,14 @@ async def websocket_endpoint(websocket: WebSocket):
             action = msg.get("action")
             if action == "subscribe":
                 channel = msg.get("channel")
-                # Add user to channel
+                # اضافه کردن کاربر به کانال
                 await websocket.send_text(json.dumps({
                     "type": "subscribed",
                     "channel": channel
                 }))
 ```
 
-### Broadcast to All Users:
+### Broadcast به همه کاربران:
 
 ```python
 # Backend
@@ -436,9 +436,9 @@ async def websocket_endpoint(websocket: WebSocket):
     try:
         while True:
             data = await websocket.receive_text()
-            # Send to everyone
+            # ارسال به همه
             for conn in connections:
-                if conn != websocket:  # Except sender
+                if conn != websocket:  # به غیر از فرستنده
                     await conn.send_text(data)
     finally:
         connections.remove(websocket)
@@ -446,131 +446,131 @@ async def websocket_endpoint(websocket: WebSocket):
 
 ---
 
-## 🔧 Troubleshooting
+## 🔧 عیب‌یابی
 
-### Issue: Connection not establishing
+### مشکل: اتصال برقرار نمی‌شود
 
-**✅ Solution:**
-1. Make sure Backend is running on port 8001:
+**✅ راه‌حل:**
+1. مطمئن شوید Backend روی پورت 8001 در حال اجراست:
    ```bash
    curl http://localhost:8001
    ```
 
-2. Check browser console (`F12`):
+2. کنسول مرورگر را چک کنید (`F12`):
    ```
    [ws] ❌ error: ...
    ```
 
-3. Check CORS - Is Frontend running from `localhost:5173`?
+3. CORS را چک کنید - آیا Frontend از `localhost:5173` اجرا می‌شود؟
 
-### Issue: Messages displaying twice
+### مشکل: پیام‌ها دوباره نمایش داده می‌شوند
 
-**✅ Solution:**
-In `App.jsx`, add empty dependency to `useEffect`:
+**✅ راه‌حل:**
+در `App.jsx`، به `useEffect` وابستگی خالی اضافه کنید:
 
 ```javascript
 useEffect(() => {
   // ...
-}, []); // 👈 Empty dependency = run only once
+}, []); // 👈 وابستگی خالی = فقط یک‌بار اجرا شود
 ```
 
-### Issue: Auto-Reconnect not working
+### مشکل: Auto-Reconnect کار نمی‌کند
 
-**✅ Solution:**
-In `ws.js`, increase `MAX_RECONNECT`:
+**✅ راه‌حل:**
+در `ws.js`، `MAX_RECONNECT` را افزایش دهید:
 
 ```javascript
-const MAX_RECONNECT = 10; // Instead of 6
+const MAX_RECONNECT = 10; // به جای 6
 ```
 
 ---
 
 ## 🗺️ Roadmap
 
-### Next Version (v2.0):
+### نسخه بعدی (v2.0):
 
-- [ ] **Authentication**: JWT Token for security
-- [ ] **Room System**: Support for rooms/channels
-- [ ] **Message Queue**: Redis for scalability
-- [ ] **Typing Indicator**: Show "typing..."
-- [ ] **File Upload**: Send files via WebSocket
-- [ ] **Docker**: Docker Compose configuration
+- [ ] **Authentication**: JWT Token برای امنیت
+- [ ] **Room System**: پشتیبانی از اتاق‌ها/کانال‌ها
+- [ ] **Message Queue**: Redis برای مقیاس‌پذیری
+- [ ] **Typing Indicator**: نشان‌دادن "در حال تایپ..."
+- [ ] **File Upload**: ارسال فایل از طریق WebSocket
+- [ ] **Docker**: پیکربندی Docker Compose
 - [ ] **Tests**: Unit Tests + Integration Tests
 - [ ] **Monitoring**: Prometheus + Grafana
 
 ---
 
-## 🤝 Contributing
+## 🤝 مشارکت در پروژه
 
-This project is **Open Source** and we welcome your contributions! 🎉
+این پروژه **Open Source** است و از مشارکت شما استقبال می‌کنیم! 🎉
 
-### How to Contribute?
+### چگونه مشارکت کنیم؟
 
-1. **Fork** the project
-2. Create a new **Branch**:
+1. **Fork** کنید
+2. یک **Branch** جدید بسازید:
    ```bash
    git checkout -b feature/amazing-feature
    ```
-3. **Commit** your changes:
+3. تغییرات را **Commit** کنید:
    ```bash
    git commit -m "Add amazing feature"
    ```
-4. **Push** to your branch:
+4. به Branch خود **Push** کنید:
    ```bash
    git push origin feature/amazing-feature
    ```
-5. Open a **Pull Request**
+5. یک **Pull Request** باز کنید
 
-### Contribution Guidelines:
+### راهنمای مشارکت:
 
-- Write clean and readable code
-- Add comments in English or your language
-- Follow existing patterns
-- Test before PR
+- کد تمیز و خوانا بنویسید
+- Comment فارسی یا انگلیسی اضافه کنید
+- از الگوهای موجود پیروی کنید
+- تست کنید قبل از PR
 
 ---
 
-## 📞 Support
+## 📞 پشتیبانی
 
-### Have Questions?
+### سوالی دارید؟
 
-- **GitHub Issues**: https://github.com/EsanRahimi/websocket/issues
+- **GitHub Issues**: [لینک Issues](https://github.com/EsanRahimi/websocket/issues)
 - **Email**: EhsanRahimi@Live.com
-- **LinkedIn**: https://linkedin.com/in/EsanRahimi
+- **LinkedIn**: [پروفایل شما](https://linkedin.com/in/EsanRahimi)
 
-### Educational Resources:
+### منابع آموزشی:
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com)
-- [WebSocket MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
-- [React Hooks Guide](https://react.dev/reference/react)
-
----
-
-## 📄 License
-
-This project is released under the **MIT License** - see [LICENSE](LICENSE) file for details.
-
-```
-MIT License - Free for commercial use, modification, and distribution
-```
+- [مستندات FastAPI](https://fastapi.tiangolo.com)
+- [مستندات WebSocket MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
+- [راهنمای React Hooks](https://react.dev/reference/react)
 
 ---
 
-## ⭐ Support the Project
+## 📄 لایسنس
 
-If this project was helpful to you:
+این پروژه تحت لایسنس **MIT** منتشر شده است - جزئیات در فایل [LICENSE](LICENSE).
 
-- ⭐ Give it a **Star**
-- 🍴 **Fork** it
-- 🐛 Open an **Issue**
-- 💬 **Share** it
+```
+MIT License - آزاد برای استفاده تجاری، تغییر و توزیع
+```
+
+---
+
+## ⭐ حمایت از پروژه
+
+اگر این پروژه برای شما مفید بود:
+
+- ⭐ یک **Star** بدهید
+- 🍴 **Fork** کنید
+- 🐛 **Issue** باز کنید
+- 💬 **Share** کنید
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for the Developer Community**
+**ساخته شده با ❤️ برای جامعه توسعه‌دهندگان ایرانی**
 
-[⬆ Back to Top](#-websocket-template---react--fastapi)
+[⬆ بازگشت به بالا](#-websocket-template---react--fastapi)
 
 </div>

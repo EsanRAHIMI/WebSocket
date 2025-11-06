@@ -2,11 +2,11 @@
 
 npm create vite@latest frontend -- --template react
 
-Node رو آپدیت کن، بعد سرور dev رو بالا بیار:
-# اگه nvm داری
+Update Node, then start the dev server:
+# If you have nvm
 nvm install 22.12.0
 nvm use 22.12.0
-node -v   # باید 22.12.0 یا بالاتر باشه
+node -v   # Should be 22.12.0 or higher
 
 cd frontend
 rm -rf node_modules package-lock.json
