@@ -191,7 +191,7 @@ Client ⟷ Server (اتصال دائمی)
 
 ```bash
 git clone https://github.com/EsanRahimi/websocket.git
-cd websocket-template
+cd websocket
 ```
 
 ### مرحله 2️⃣: راه‌اندازی Backend (FastAPI)
@@ -268,7 +268,7 @@ App: WebSocket opened
 ## 📁 ساختار پروژه
 
 ```
-websocket-template/
+websocket/
 ├── backend/
 │   ├── main.py              # FastAPI WebSocket Server
 │   ├── requirements.txt     # Python Dependencies
@@ -534,9 +534,9 @@ const MAX_RECONNECT = 10; // به جای 6
 
 ### سوالی دارید؟
 
-- **GitHub Issues**: [لینک Issues](https://github.com/EsanRahimi/websocket/issues)
+- **GitHub Issues**: https://github.com/EsanRahimi/websocket/issues
 - **Email**: EhsanRahimi@Live.com
-- **LinkedIn**: [پروفایل شما](https://linkedin.com/in/EsanRahimi)
+- **LinkedIn**: https://linkedin.com/in/EsanRahimi
 
 ### منابع آموزشی:
 
